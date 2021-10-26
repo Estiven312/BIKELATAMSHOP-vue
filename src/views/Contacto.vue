@@ -9,6 +9,7 @@
    <router-link id="i"  to="/Pedidos">Pedidos</router-link> | |
    <router-link id="i"  to="/compra">Compra</router-link> | |
    
+   
    <router-link to="http://192.168.1.8:8080/" >Cerrar Sesión</router-link>
   
 
