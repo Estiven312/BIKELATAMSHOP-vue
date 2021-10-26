@@ -1,48 +1,36 @@
 <template>
+<div  id="nav">
+   <h1 id="tittle" > BIKELATAMSHOP </h1>
+   <!--   <router-link id="i"  to="/">Inicio</router-link>      |-->
+   <router-link id="i"  to="/about">Productos</router-link>    | |
+   
+   <router-link id="i"  to="/Contacto">Contacto</router-link>    | |
+   <router-link id="i"  to="/Pedidos">Pedidos</router-link>| |
+   <router-link id="i"  to="/compra">Compra</router-link>| |
+   
+
+   <router-link to="http://192.168.1.8:8080/" >Cerrar Sesión</router-link>
+  
+  </div>
+
+ 
   <div class="about">
-    <h1>This is an about page</h1>
-    <!DOCTYPE html>
-<html lang="en">
+    
+    
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Productos</title>
-    <link rel="shortcut icon" href="https://thumbs.dreamstime.com/b/turista-en-bicicleta-logo-emblema-para-un-club-de-turismo-silueta-negra-hombre-con-una-mochila-sobre-fondo-blanco-actividades-al-170956698.jpg
-     " type="imagen/icon">
+    
     
  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 </head>
     
+
 <body class="bg-white grid grid-cols-12 gap-03  mx-auto" style="font-size: 15px;" >
     <header class="bg-blue-500 col-span-12" style="font-size: 60px;" >
-         <h1 >
-          BikeShopLatam
-         </h1> 
+        
           
     </header>
-       <nav class="bg-blue-600 col-span-12" style="font-size: 15px;">
-          <ul class="grid grid-cols-6 mx-auto">
-             <li class="text-white">
-                <a href="#">Home</a>
-             </li>
-             <li class="text-white mx-auto">
-                <a href="pestaña_formulario_cliente.html">Cliente</a>
-             </li>
-             <li class="text-white mx-auto">
-                <a href="productos.html">Producto</a>
-             </li>
-             <li class="text-white mx-auto">
-                <a href="mantenimiento.html">Mantenimiento</a>
-             </li>
-             <li class="text-white mx-auto">
-                <a href="pedido.html">Pedido</a>
-             </li>
-             <li class="text-white mx-auto">
-                <a href="contacto.html">Contácto</a>
-             </li>
-          </ul>
-       </nav>
+       
     <aside class="bg-gray-800 col-span-2">
 
     </aside>
@@ -135,19 +123,83 @@
 
         <form action="#" method="post">
             <label for="observaciones">Observaciones sobre nuestros productos:</label><br>
-            <textarea class="border-2" placeholder="Escriba si desea que agreguemos otros productos a nuestros catalogos" name="observaciones" cols="40" rows="10"></textarea>
-            <br/><br/>
-            <input type="reset" value="Reset">
-            <button type="reset"></button>
-            <input type="submit" name="enviar" value="Enviar">
-            <button class="border-4" type="submit"></button>
-
-
+            
+           <textarea  class="border-2 " name="Mensaje" id="" cols="30" rows="2" placeholder="Escribe tu mensaje" v-model="Mensaje" ></textarea>
+    <br><br>
+     <input  class="invisible   " type="submit" name="ENVIAR" value="Enviar" >  
+     <button @click="Informacion()" type="button" class="border-4 border-blue-500 text-center bg-blue-400" >ENVIAR</button>
+       <h1>mensaje{{Mensaje}}</h1>
         </form>
 
     </main>
-    
+  
 </body>
-</html>
+
   </div>
 </template>
+<script>
+export default {
+data(){
+   return{
+     
+     
+    
+
+          Mensaje:"",
+      
+     
+    listaObservaciones:[]
+
+   };
+},
+methods: {
+  Informacion() {
+    
+    this.listaObservaciones.push(Mensaje);
+
+      console.log(listaObservaciones[0])
+    
+
+      
+  },
+  
+},
+  
+  
+}
+</script>
+<style>
+#app {
+
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+#nav {
+  background-size: cover;
+  background-image: url(https://image.winudf.com/v2/image1/Y29tLmJpa2UubW91bnRhaW5iaWtlLmRvd25oaWxsbW91bnRhaW5iaWtld2FsbHBhcGVyX3NjcmVlbl8wXzE1NTQwNjE5NzhfMDQ4/screen-0.jpg?fakeurl=1&type=.jpg);
+  width: 100%; height: 300px;
+  padding: 5px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #dd460a;
+}
+#tittle{
+color: #ee8208;
+padding: 40px;
+font-size: 50px;
+}
+#i{
+font-size: 20px;
+padding: 80px;
+}
+
+#nav a.router-link-exact-active {
+  color: #32bb39;
+}
+</style>

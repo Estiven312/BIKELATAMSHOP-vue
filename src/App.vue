@@ -1,13 +1,11 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+ 
   <router-view/>
 </template>
 
 <style>
 #app {
+
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,15 +14,27 @@
 }
 
 #nav {
-  padding: 30px;
+  background-size: cover;
+  background-image: url(https://image.winudf.com/v2/image1/Y29tLmJpa2UubW91bnRhaW5iaWtlLmRvd25oaWxsbW91bnRhaW5iaWtld2FsbHBhcGVyX3NjcmVlbl8wXzE1NTQwNjE5NzhfMDQ4/screen-0.jpg?fakeurl=1&type=.jpg);
+  width: 100%; height: 300px;
+  padding: 5px;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #dd460a;
+}
+#tittle{
+color: #ee8208;
+padding: 40px;
+font-size: 50px;
+}
+#i{
+font-size: 20px;
+padding: 80px;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #32bb39;
 }
 </style>
